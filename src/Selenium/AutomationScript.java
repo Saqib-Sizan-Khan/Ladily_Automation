@@ -4,13 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.remote.server.handler.AcceptAlert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class AutomationScript {
 	
 	ChromeDriver driver;
 	Actions actions;
+	WebDriverWait wait;
 	
 	String url = "https://bssoln-001-site3.atempurl.com";
 	
@@ -20,6 +22,7 @@ public class AutomationScript {
 		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
 		actions = new Actions(driver);
+		wait = new WebDriverWait(driver, 5);
 		
 		driver.manage().window().maximize();
 		
@@ -31,8 +34,8 @@ public class AutomationScript {
 		WebElement logInIcon = driver.findElement(By.xpath("//div[@class='header-links']//ul/li[2]"));
 		logInIcon.click();
 		
-//		WebElement registrationLink = driver.findElement(By.linkText("Create Now"));
-//		registrationLink.click();
+		WebElement registrationLink = driver.findElement(By.linkText("Create Now"));
+		registrationLink.click();
 	}
 	
 //	@Test (priority = 3)
@@ -49,11 +52,11 @@ public class AutomationScript {
 //		firstName.sendKeys("SaqibSizan");
 //		lastName.sendKeys("Khan");
 //		email.sendKeys("sizan59@gmail.com");
-//		phone.sendKeys("01520108612");
+//		phone.sendKeys("01711465587");
 //		password.sendKeys("sizan123");
 //		confirmPass.sendKeys("sizan123");
 //		
-//		regButton.click();
+//		actions.moveToElement(regButton).click().build().perform();
 //	}
 	
 	@Test (priority = 4)
@@ -65,22 +68,31 @@ public class AutomationScript {
 		userName.sendKeys("sizan@gmail.com");
 		password.sendKeys("sizan_cit");
 		
-		loginButton.click();
+		actions.moveToElement(loginButton).click().build().perform();
+	}
+	
+	private void cartScript(String category, int productNum) {
+		WebElement eyeProductNav = driver.findElement(By.linkText(category));
+		eyeProductNav.click();
+		
+		String productXpath = "(//div[@class='product-item'])[" + productNum + "]";
+		WebElement product = driver.findElement(By.xpath(productXpath));
+		product.click();
+		
+		WebElement addCartButton = driver.findElement(By.xpath("//div[@class='add-to-cart']/div/div/button"));
+		actions.moveToElement(addCartButton).click().build().perform();
+		
+		WebElement continueShoppingButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("continueshopping")));
+		continueShoppingButton.click();
+		
+		WebElement goToHome = driver.findElement(By.xpath("(//div[@class='header-logo'])[1]"));
+		goToHome.click();
 	}
 	
 	@Test (priority = 5)
-	public void addProductToCart() {
-		WebElement eyeProductNav = driver.findElement(By.linkText("Eyeshadow Palettes"));
-		eyeProductNav.click();
-		
-		WebElement product = driver.findElement(By.xpath("(//div[@class='product-item'])[2]"));
-		product.click();
-		
-		WebElement addCartButton = driver.findElement(By.id("add-to-cart-button-9"));
-		actions.moveToElement(addCartButton).click().build().perform();
-		
-		WebElement continueShopping = driver.findElement(By.id("continueshopping"));
-		continueShopping.click();
+	public void addProductsToCart() {
+		cartScript("Eyeshadow Palettes", 2);
+		cartScript("Mascara", 3);
 	}
 
 }

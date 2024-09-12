@@ -5,10 +5,9 @@
     <classes>
       <class name="Selenium.AutomationScript">
         <methods>
+          <include name="addProductsToCart"/>
           <include name="userLogin"/>
-          <include name="invokeWebsite"/>
           <include name="navigateToRegistrationPage"/>
-          <include name="addProductToCart"/>
         </methods>
       </class> <!-- Selenium.AutomationScript -->
     </classes>
