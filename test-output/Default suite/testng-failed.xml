@@ -7,7 +7,10 @@
         <methods>
           <include name="addProductsToCart"/>
           <include name="userLogin"/>
+          <include name="userRegistration"/>
           <include name="navigateToRegistrationPage"/>
+          <include name="navigateToCartPage"/>
+          <include name="updateCart"/>
         </methods>
       </class> <!-- Selenium.AutomationScript -->
     </classes>

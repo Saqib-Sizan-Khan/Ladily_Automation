@@ -1,5 +1,7 @@
 package Selenium;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -38,26 +40,29 @@ public class AutomationScript {
 		registrationLink.click();
 	}
 	
-//	@Test (priority = 3)
-//	public void userRegistration() {
-//		WebElement firstName = driver.findElement(By.id("FirstName"));
-//		WebElement lastName = driver.findElement(By.id("LastName"));
-//		WebElement email = driver.findElement(By.id("Email"));
-//		WebElement phone = driver.findElement(By.id("Phone"));
-//		WebElement password = driver.findElement(By.name("Password"));
-//		WebElement confirmPass = driver.findElement(By.name("ConfirmPassword"));
-//		WebElement regButton = driver.findElement(By.id("register-button"));
-//		
-//		
-//		firstName.sendKeys("SaqibSizan");
-//		lastName.sendKeys("Khan");
-//		email.sendKeys("sizan59@gmail.com");
-//		phone.sendKeys("01711465587");
-//		password.sendKeys("sizan123");
-//		confirmPass.sendKeys("sizan123");
-//		
-//		actions.moveToElement(regButton).click().build().perform();
-//	}
+	@Test (priority = 3)
+	public void userRegistration() {
+		WebElement firstName = driver.findElement(By.id("FirstName"));
+		WebElement lastName = driver.findElement(By.id("LastName"));
+		WebElement email = driver.findElement(By.id("Email"));
+		WebElement phone = driver.findElement(By.id("Phone"));
+		WebElement password = driver.findElement(By.name("Password"));
+		WebElement confirmPass = driver.findElement(By.name("ConfirmPassword"));
+		WebElement regButton = driver.findElement(By.id("register-button"));
+		
+		
+		firstName.sendKeys("SaqibSizan");
+		lastName.sendKeys("Khan");
+		email.sendKeys("sizan59@gmail.com");
+		phone.sendKeys("01520103756");
+		password.sendKeys("sizan123");
+		confirmPass.sendKeys("sizan123");
+		
+		actions.moveToElement(regButton).click().build().perform();
+		
+		WebElement logInIcon = driver.findElement(By.xpath("//div[@class='header-links']//ul/li[2]"));
+		logInIcon.click();
+	}
 	
 	@Test (priority = 4)
 	public void userLogin() {
@@ -91,8 +96,24 @@ public class AutomationScript {
 	
 	@Test (priority = 5)
 	public void addProductsToCart() {
+		cartScript("Foundation", 1);
 		cartScript("Eyeshadow Palettes", 2);
 		cartScript("Mascara", 3);
+	}
+	
+	@Test (priority = 6)
+	public void navigateToCartPage() {
+		WebElement cartIcon = driver.findElement(By.xpath("//div[@class='header-links']//ul/li[4]"));
+		cartIcon.click();
+	}
+	
+	@Test (priority = 7)
+	public void removeItemFromCart() {
+		List<WebElement> removeButtons = driver.findElements(By.xpath("//td/button[@name='updatecart']"));
+		
+		int totalElements = removeButtons.size();
+		
+		removeButtons.get(totalElements-1).click();
 	}
 
 }
