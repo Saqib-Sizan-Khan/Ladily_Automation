@@ -6,11 +6,9 @@
       <class name="Selenium.AutomationScript">
         <methods>
           <include name="addProductsToCart"/>
-          <include name="userLogin"/>
-          <include name="userRegistration"/>
-          <include name="navigateToRegistrationPage"/>
           <include name="navigateToCartPage"/>
-          <include name="updateCart"/>
+          <include name="removeItemFromCart"/>
+          <include name="checkoutProducts"/>
         </methods>
       </class> <!-- Selenium.AutomationScript -->
     </classes>

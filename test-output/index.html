@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\ssk12\AppData\Local\Temp\testng-eclipse--1295987128\testng-customsuite.xml</span>
+                    <span>C:\Users\ssk12\AppData\Local\Temp\testng-eclipse-1302121430\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">9 methods,   9 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -105,6 +105,16 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Selenium.AutomationScript" hash-for-method="addProductsToCart">addProductsToCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Selenium.AutomationScript" hash-for-method="checkoutProducts">checkoutProducts</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="Selenium.AutomationScript" hash-for-method="exitBrowser">exitBrowser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -164,6 +174,20 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="checkoutProducts">
+                  </a> <!-- checkoutProducts -->
+                  <span class="method-name">checkoutProducts</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="exitBrowser">
+                  </a> <!-- exitBrowser -->
+                  <span class="method-name">exitBrowser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="invokeWebsite">
                   </a> <!-- invokeWebsite -->
                   <span class="method-name">invokeWebsite</span>
@@ -209,7 +233,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ssk12\AppData\Local\Temp\testng-eclipse--1295987128\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ssk12\AppData\Local\Temp\testng-eclipse-1302121430\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -258,40 +282,48 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(9);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'invokeWebsite')
 data.setCell(0, 2, 'Selenium.AutomationScript')
-data.setCell(0, 3, 22354);
+data.setCell(0, 3, 29761);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'addProductsToCart')
 data.setCell(1, 2, 'Selenium.AutomationScript')
-data.setCell(1, 3, 18587);
+data.setCell(1, 3, 16900);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'userRegistration')
+data.setCell(2, 1, 'navigateToRegistrationPage')
 data.setCell(2, 2, 'Selenium.AutomationScript')
-data.setCell(2, 3, 2526);
+data.setCell(2, 3, 4998);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'userLogin')
+data.setCell(3, 1, 'checkoutProducts')
 data.setCell(3, 2, 'Selenium.AutomationScript')
-data.setCell(3, 3, 2412);
+data.setCell(3, 3, 4982);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'navigateToRegistrationPage')
+data.setCell(4, 1, 'userLogin')
 data.setCell(4, 2, 'Selenium.AutomationScript')
-data.setCell(4, 3, 2289);
+data.setCell(4, 3, 2527);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'navigateToCartPage')
+data.setCell(5, 1, 'userRegistration')
 data.setCell(5, 2, 'Selenium.AutomationScript')
-data.setCell(5, 3, 1034);
+data.setCell(5, 3, 2187);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'removeItemFromCart')
+data.setCell(6, 1, 'navigateToCartPage')
 data.setCell(6, 2, 'Selenium.AutomationScript')
-data.setCell(6, 3, 650);
+data.setCell(6, 3, 1209);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'exitBrowser')
+data.setCell(7, 2, 'Selenium.AutomationScript')
+data.setCell(7, 3, 698);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'removeItemFromCart')
+data.setCell(8, 2, 'Selenium.AutomationScript')
+data.setCell(8, 3, 538);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -324,27 +356,35 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">navigateToRegistrationPage</span>
-                <span class="method-start">22361 ms</span>
+                <span class="method-start">29769 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">userRegistration</span>
-                <span class="method-start">24652 ms</span>
+                <span class="method-start">34768 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">userLogin</span>
-                <span class="method-start">27181 ms</span>
+                <span class="method-start">36958 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">addProductsToCart</span>
-                <span class="method-start">29597 ms</span>
+                <span class="method-start">39485 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">navigateToCartPage</span>
-                <span class="method-start">48187 ms</span>
+                <span class="method-start">56385 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">removeItemFromCart</span>
-                <span class="method-start">49228 ms</span>
+                <span class="method-start">57595 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkoutProducts</span>
+                <span class="method-start">58135 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">exitBrowser</span>
+                <span class="method-start">63119 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -115,5 +115,25 @@ public class AutomationScript {
 		
 		removeButtons.get(totalElements-1).click();
 	}
+	
+	@Test (priority = 8)
+	public void checkoutProducts() {
+		WebElement checkoutButton = driver.findElement(By.id("checkout"));
+		checkoutButton.click();
+		
+		WebElement cashPayment = driver.findElement(By.xpath("//ul[@id='payment-method-block']/li[2]"));
+		cashPayment.click();
+		
+		WebElement confirmOrder = driver.findElement(By.xpath("//div[@class='order-summary__container']/button"));
+		actions.moveToElement(confirmOrder).click().build().perform();
+		
+		WebElement goToHome = driver.findElement(By.xpath("//div[@class='buttons']/button"));
+		goToHome.click();
+	}
+	
+	@Test (priority = 9)
+	public void exitBrowser() {
+		driver.quit();
+	}
 
 }
